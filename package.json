@@ -1,0 +1,19 @@
+{
+  "name": "fundamentos_nodejs",
+  "version": "1.0.0",
+  "description": "Fundamentos de NodeJs",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgaletto/fundamentos_nodejs.git"
+  },
+  "author": "Damian Galetto <damian@prixmates.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgaletto/fundamentos_nodejs/issues"
+  },
+  "homepage": "https://github.com/dgaletto/fundamentos_nodejs#readme"
+}
