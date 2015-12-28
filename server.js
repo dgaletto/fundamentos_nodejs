@@ -1,11 +1,11 @@
 'use strict';
-var http = require('http'),
-	port = process.env.port || 8080;
-var server = http.createServer(function(req, res){
-	console.log('server.js: Estan haciendo una peticion');
-	res.writeHead(200, {'content_type': 'text/plain'});
-	res.end('Hola manola!');
+
+var express = require('express'),
+		server = express(),
+		port = process.env.PORT || 8080;
+
+server.listen(port, () => {
+	console.log('server.js: Escuchando en el puerto ' + port );
 });
-server.listen(port, function(){
-	console.log('server.js: Inicializa el server en el puerto ' + port);
-});
+
+require('./routers')(server);
