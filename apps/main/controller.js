@@ -6,16 +6,18 @@ var express = require('express'),
 
 router.route('/')
 
-    .get((req, res) => {
-      res.send('Hola Manola');
-    });
+    .get(
+      (req, res) =>
+        res.render('main/home')
+    );
 
 
 router.route('/otra-url')
 
-    .get((req, res) => {
-      res.send('Otra URL');
-    });
+    .get(
+      (req, res) =>
+        res.send('Otra URL')
+    );
 
 
 module.exports = router;
