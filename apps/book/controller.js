@@ -3,13 +3,11 @@
 var express = require('express'),
     router = express.Router();
 
-
-router.route('/')
+router.route('/libro/:book_slug')
 
     .get(
       (req, res) =>
-        res.render('main/index')
+        res.render('book/book_detail')
     );
-
 
 module.exports = router;
