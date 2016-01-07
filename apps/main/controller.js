@@ -7,8 +7,10 @@ var express = require('express'),
 router.route('/')
 
     .get(
-      (req, res) =>
-        res.render('main/index')
+      (req, res) => {
+          console.log(req.user);
+          res.render('main/index');
+      }
     );
 
 

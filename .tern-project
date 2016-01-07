@@ -5,6 +5,8 @@
     "jquery"
   ],
   "plugins": {
-    "node-express": {}
+    "node": {},
+    "node-express": {},
+    "node-mongoose": {}
   }
 }

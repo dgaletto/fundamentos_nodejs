@@ -8,8 +8,12 @@ hash = require('./helper').hash;
 router.route('/ingresar/')
 
     .get(
-        (req, res) =>
-        res.render('user/login')
+        (req, res) => {
+            let context = {
+                error_message: req.flash('error')[0]
+            }
+            res.render('user/login', context);
+        }
     );
 
 router.route('/registrar/')
@@ -21,7 +25,7 @@ router.route('/registrar/')
 
     .post(
         (req, res) => {
-            
+
             let user = new User({
                 username: req.body.username,
                 password: hash(req.body.password)
