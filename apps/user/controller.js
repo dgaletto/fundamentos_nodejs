@@ -5,6 +5,15 @@ router = express.Router(),
 User = require('./model').User,
 hash = require('./helper').hash;
 
+router.route('/salir/')
+
+    .get(
+        (req, res) => {
+            req.logout();
+            res.redirect('/');
+        }
+    );
+
 router.route('/ingresar/')
 
     .get(
@@ -20,7 +29,7 @@ router.route('/registrar/')
 
     .get(
         (req, res) =>
-        res.render('user/register')
+            res.render('user/register')
     )
 
     .post(

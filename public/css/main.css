@@ -17,8 +17,7 @@ a {
   color: white;
 }
 
-input {
-  height: 30px;
+input, textarea {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -32,6 +31,11 @@ input {
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  margin-bottom: 20px;
+}
+
+input {
+  height: 30px;
 }
 
 /* Layout */
@@ -131,7 +135,6 @@ input {
 .libros {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .libro {

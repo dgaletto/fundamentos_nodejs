@@ -28,24 +28,21 @@
 		<div class="contenedor">
 
 			<h1 class="principal__titulo">Librería</h1>
-			<span class="principal__subtitulo">Encuentra los mejores libros que deseas.</span>
+			<span class="principal__subtitulo">Admin</span>
 
 			<div class="libros">
 
-				{% for book in books %}
-					<article class="libro">
+				<form method="post" enctype="multipart/form-data">
+					<label>Titulo</label>
+					<input type="text" name="title" placeholder="Titulo" style="width: 80%;"><br>
+					<label>Autor</label>
+					<input type="text" name="author" placeholder="Autor" style="width: 80%;"><br>
+					<label>Resumen</label><br>
+					<textarea name="summary" rows="10" cols="50"></textarea><br>
+					<label>Imagen</label> <input type="file" name="image"><br>
+					<input type="submit" value="Crear libro">
+				</form>
 
-						<img src="{{ book.image }}" alt="" class="libro__img">
-						<div class="libro__sombra">
-
-							<h3 class="libro__titulo"><a href="/libro/{{ book.slug }}/">{{ book.title }}</a></h3>
-							<span class="libro__autor">{{ book.author }}</span>
-
-						</div>
-
-					</article>
-				{% endfor %}
-				
 			</div>
 		</div>
 	</section>

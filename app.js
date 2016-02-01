@@ -10,8 +10,8 @@ var express = require('express'),
 	RedisStore = require('connect-redis')(session),
 	port = process.env.PORT || 8080;
 
-app.use(flash());
 
+app.use(flash());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 //Sessiones, cookies y passport
@@ -26,8 +26,13 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true
 }));
-
 require('./config/passport')(app);
+
+// Middlewares
+app.use((req, res, next) => {
+	app.locals.user = req.user;
+	next();
+});
 
 // TEMPLATES
 app.engine('html', swig.renderFile);
@@ -37,6 +42,11 @@ swig.setDefaults({ cache: false });
 
 // STATIC FILES
 app.use(express.static(__dirname + '/public'));
+// MEDIA FILES
+app.use((req, res, next) => {
+	req.MEDIA_URL = 'http://localhost:8080/media';
+	next();
+});
 
 app.listen(port, () =>
 		console.log('server.js: Escuchando en el puerto ' + port )

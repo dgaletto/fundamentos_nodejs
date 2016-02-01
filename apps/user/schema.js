@@ -1,8 +1,8 @@
 'use strict';
 
 var mongoose = require('../../config/mongoose'),
-Schema = mongoose.Schema,
-hash = require('./helper').hash;
+    Schema = mongoose.Schema,
+    hash = require('./helper').hash;
 
 var schemas = {
 
